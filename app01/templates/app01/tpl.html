@@ -1,0 +1,32 @@
+{% extends "app01/base.html" %}
+{% block title %}模板语法演示 — mysite{% endblock %}
+{% block content %}
+<h2>模板语法演示</h2>
+
+<h3>1. 变量渲染</h3>
+<p>你好，<strong>{{ name }}</strong>！</p>
+
+<h3>2. for 循环</h3>
+<ul>
+    {% for role in roles %}
+    <li>{{ forloop.counter }}. {{ role }}</li>
+    {% endfor %}
+</ul>
+
+<h3>3. if / elif / else 判断</h3>
+{% if name == "皮皮" %}
+<p>检测到：当前演示用户是“皮皮”。</p>
+{% elif name == "小明" %}
+<p>当前演示用户是小明。</p>
+{% else %}
+<p>未知用户。</p>
+{% endif %}
+
+<h3>4. 字典取值（点语法 / 下标语法）</h3>
+<p>点语法：{{ user_dict.name }}，今年 {{ user_dict.age }} 岁。</p>
+<p>下标语法：{{ user_dict.name }}，今年 {{ user_dict.age }} 岁。</p>
+
+<h3>5. 过滤器</h3>
+<p>默认值：{{ user_dict.gender|default:"未填写性别" }}</p>
+<p>长度：roles 列表共有 {{ roles|length }} 项</p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "app01/base.html" %}
+{% block title %}成都天气 — mysite{% endblock %}
+{% block content %}
+<h2>成都天气</h2>
+<p class="hint">外部 API 调用演示（wttr.in 免费接口，无需 key；网络不可用时显示示例数据）</p>
+{% if data %}
+<div class="weather-card">
+    <div class="city">{{ data.city }}</div>
+    <div class="temp">{{ data.temp }} °C</div>
+    <div class="desc">{{ data.text }}</div>
+    <ul>
+        <li>体感温度：{{ data.feels }} °C</li>
+        <li>湿度：{{ data.humidity }}%</li>
+        <li>风速：{{ data.wind }} km/h</li>
+        <li>数据时间：{{ data.updated }}</li>
+    </ul>
+</div>
+{% endif %}
+{% if error %}<div class="alert">接口调用提示：{{ error }}</div>{% endif %}
+{% endblock %}

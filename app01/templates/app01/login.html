@@ -1,0 +1,14 @@
+{% extends "app01/base.html" %}
+{% block title %}登录 — mysite{% endblock %}
+{% block content %}
+<h2>登录</h2>
+{% if error %}<div class="alert">{{ error }}</div>{% endif %}
+<form method="post" action="/login/">
+    {% csrf_token %}
+    <div class="form-row"><label>用户名</label><input type="text" name="name" required></div>
+    <div class="form-row"><label>密码</label><input type="password" name="password" required></div>
+    <button type="submit" class="btn">登录</button>
+</form>
+<p class="hint">提示：先在“添加用户”里创建账号，或用下面演示账号登录。<br>
+演示账号：<code>admin / 123456</code>（需要先在用户管理中添加）</p>
+{% endblock %}

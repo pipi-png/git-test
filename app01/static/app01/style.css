@@ -1,0 +1,31 @@
+/* mysite — Django 学习项目 样式（静态资源演示） */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Microsoft YaHei", Arial, sans-serif; background: #f5f6fa; color: #2d3436; }
+.container { max-width: 860px; margin: 30px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,.08); padding: 24px 32px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0984e3; padding-bottom: 12px; margin-bottom: 20px; }
+.brand { font-weight: 700; color: #0984e3; }
+.nav a { color: #0984e3; text-decoration: none; margin-left: 14px; }
+.nav a:hover { text-decoration: underline; }
+.nav .user { color: #636e72; margin-left: 14px; }
+h2 { color: #2d3436; margin-bottom: 10px; }
+h3 { color: #0984e3; margin: 18px 0 8px; }
+.hint { color: #636e72; font-size: 13px; margin-bottom: 14px; }
+.alert { background: #ffeaa7; color: #d63031; padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #dfe6e9; padding: 8px 12px; text-align: left; font-size: 14px; }
+th { background: #0984e3; color: #fff; }
+tr:nth-child(even) { background: #f8f9fa; }
+.del { color: #d63031; text-decoration: none; }
+.form-row { margin-bottom: 12px; }
+.form-row label { display: inline-block; width: 90px; color: #636e72; }
+.form-row input, .form-row select { padding: 8px 10px; border: 1px solid #dfe6e9; border-radius: 6px; width: 260px; }
+.btn { display: inline-block; background: #0984e3; color: #fff; border: none; padding: 8px 22px; border-radius: 6px; cursor: pointer; text-decoration: none; font-size: 14px; }
+.btn.plain { background: #b2bec3; }
+.btn:hover { opacity: .9; }
+.actions { margin: 14px 0; }
+.weather-card { text-align: center; padding: 24px; background: linear-gradient(135deg, #74b9ff, #a29bfe); color: #fff; border-radius: 10px; margin: 12px 0; }
+.weather-card .city { font-size: 22px; }
+.weather-card .temp { font-size: 48px; font-weight: 700; }
+.weather-card .desc { font-size: 16px; margin: 6px 0 12px; }
+.weather-card ul { list-style: none; font-size: 14px; }
+.footer { margin-top: 24px; padding-top: 12px; border-top: 1px solid #dfe6e9; color: #b2bec3; font-size: 12px; }

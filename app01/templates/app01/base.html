@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}mysite — Django 学习项目{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app01/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="topbar">
+        <span class="brand">mysite · Django 学习项目</span>
+        <span class="nav">
+            <a href="/user/list/">用户管理</a>
+            <a href="/weather/">成都天气</a>
+            <a href="/tpl/">模板语法</a>
+            {% if request.session.username %}
+                <span class="user">你好，{{ request.session.username }}</span>
+                <a href="/logout/">退出</a>
+            {% else %}
+                <a href="/login/">登录</a>
+            {% endif %}
+        </span>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="footer">Django {{ request.META.SERVER_SOFTWARE|default_if_none:"" }} 学习项目 · 用于练习 URL 路由 / 视图 / 模板 / ORM</div>
+</div>
+</body>
+</html>

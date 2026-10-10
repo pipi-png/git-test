@@ -1,0 +1,33 @@
+{% extends "app01/base.html" %}
+{% block title %}添加用户 — mysite{% endblock %}
+{% block content %}
+<h2>添加用户</h2>
+<p class="hint">POST 表单提交 + ORM 新增演示</p>
+<form method="post" action="/user/add/">
+    {% csrf_token %}
+    <div class="form-row"><label>姓名</label><input type="text" name="name" required></div>
+    <div class="form-row"><label>密码</label><input type="password" name="password" required></div>
+    <div class="form-row"><label>年龄</label><input type="number" name="age" required></div>
+    <div class="form-row"><label>邮箱</label><input type="email" name="email"></div>
+    <div class="form-row">
+        <label>部门</label>
+        <select name="department_id">
+            <option value="">（无）</option>
+            {% for dept in departments %}
+            <option value="{{ dept.id }}">{{ dept.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-row">
+        <label>角色</label>
+        <select name="role_id">
+            <option value="">（无）</option>
+            {% for role in roles %}
+            <option value="{{ role.id }}">{{ role.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn">保存</button>
+    <a class="btn plain" href="/user/list/">返回列表</a>
+</form>
+{% endblock %}
